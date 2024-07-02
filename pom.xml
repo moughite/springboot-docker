@@ -40,6 +40,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -48,7 +49,21 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.1.4</version>
+				<configuration>
+					<from>
+						<image>eclipse-temurin:17-jdk-alpine</image>
+					</from>
+					<to>
+						<image>springboot-docker</image>
+					</to>
+				</configuration>
+			</plugin>
 		</plugins>
+		<finalName>docker</finalName>
 	</build>
 
 </project>
